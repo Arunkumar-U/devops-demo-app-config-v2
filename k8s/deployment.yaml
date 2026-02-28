@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-demo-app-v2
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: devops-demo-app-v2
+  template:
+    metadata:
+      labels:
+        app: devops-demo-app-v2
+    spec:
+      containers:
+      - name: devops-demo-app-v2
+        image: arunkumar1611/devops-demo-app-v2:4
+        ports:
+        - containerPort: 8080
